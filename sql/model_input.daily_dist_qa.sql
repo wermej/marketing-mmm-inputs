@@ -47,3 +47,33 @@ from model_input.daily_dist_nov2024
   -- source     date_min	date_max	clicks	imps	    cost
   -- original	2024-11-01	2024-11-30	361278	11761083	559216
   -- view	    2024-11-01	2024-11-30	361215	11761057	559216
+
+-- META
+select 'original' as source, min(date) as date_min, max(date) as date_max
+	, sum(coalesce(clicks,0)) as clicks, sum(coalesce(impressions,0)) as imps
+	, sum(coalesce(ad_spend,0)) as cost
+from facebook_ads.master_table
+union all
+select 'view', min(date) as date_min, max(date) as date_max
+	, round(sum(clicks_meta_display)+sum(clicks_meta_shopping)+sum(clicks_meta_search)+sum(clicks_meta_video),0)
+	, round(sum(imps_meta_display)+sum(imps_meta_shopping)+sum(imps_meta_search)+sum(imps_meta_video),0)
+	, round(sum(cost_meta_display)+sum(cost_meta_shopping)+sum(cost_meta_search)+sum(cost_meta_video),2)
+from model_input.daily_dist_nov2024
+  -- source	    date_min	date_max	clicks	imps	cost
+  -- original	2024-11-02	2024-11-29	123855	4894382	184041.45
+  -- view	    2024-11-01	2024-11-30	123855	4894382	184041.45
+
+-- TIKTOK
+select 'original' as source, min(date) as date_min, max(date) as date_max
+	, sum(coalesce(clicks,0)) as clicks, sum(coalesce(impressions,0)) as imps
+	, sum(coalesce(ad_spend,0)) as cost
+from tiktok_ads.master_table
+union all
+select 'view', min(date) as date_min, max(date) as date_max
+	, round(sum(clicks_ttk_display)+sum(clicks_ttk_shopping)+sum(clicks_ttk_search)+sum(clicks_ttk_video),0)
+	, round(sum(imps_ttk_display)+sum(imps_ttk_shopping)+sum(imps_ttk_search)+sum(imps_ttk_video),0)
+	, round(sum(cost_ttk_display)+sum(cost_ttk_shopping)+sum(cost_ttk_search)+sum(cost_ttk_video),2)
+from model_input.daily_dist_nov2024
+  -- source	    date_min	date_max	clicks	imps	cost
+  -- original	2024-11-01	2024-11-30	193892  3267793 206298.37
+  -- view	    2024-11-01	2024-11-30	193892  3267793 206298.37
