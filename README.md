@@ -4,7 +4,7 @@
 Build a clean, standardized dataset from messy marketing data to support marketing mix modeling (MMM).
 
 ## Overview
-This project focuses on transforming inconsistent, multi-source marketing data into a unified, model-ready dataset. It demonstrates data cleaning, imputation, schema standardization, and handling of missing dimensions across platforms.
+This project transforms inconsistent, multi-source marketing data into a unified, model-ready dataset. It demonstrates data cleaning, imputation, schema standardization, and handling of missing dimensions across platforms.
 
 ## Key Concepts Demonstrated
 - Working with imperfect and inconsistent datasets
@@ -15,6 +15,16 @@ This project focuses on transforming inconsistent, multi-source marketing data i
 ## Data Sources
 - Google Ads dataset (used for data cleaning and imputation)
 - Multi-platform dataset (Meta and TikTok, including geographic data)
+
+## Scope
+This project uses data from November 2024 only.
+
+The date range was intentionally limited to:
+- Align multiple datasets to a consistent time period
+- Simplify development and validation of transformations
+- Focus on data preparation logic rather than data volume
+
+The same pipeline can be extended to longer time horizons in a production setting.
 
 ## Methodology
 
@@ -40,3 +50,9 @@ For dates with no Meta or TikTok data (two cases), Google metrics were distribut
 
 ## Output
 The final output is a unified, daily dataset at the country level, with standardized metrics across platforms (clicks, impressions, cost), suitable for use as input into marketing mix models.
+
+## Reproducibility
+SQL scripts for data exploration, transformation, and final dataset creation are available in the `/sql` directory.
+
+## Additional Notes
+In prior work, normalized metrics such as GRPs (impressions relative to population) were used. Population data was not available for this dataset, so normalization was not applied here.
