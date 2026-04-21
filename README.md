@@ -17,7 +17,7 @@ This project transforms inconsistent, multi-source marketing data into a unified
 ---
 
 ## Data Sources
-- Google Ads dataset (used for data cleaning and imputation)
+- Google Ads dataset (raw data ingested from CSV into a base table, then used for data cleaning and imputation)
 - Multi-platform dataset (Meta and TikTok, including geographic data)
 
 ---
