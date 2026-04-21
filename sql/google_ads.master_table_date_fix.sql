@@ -1,3 +1,9 @@
+-- File: google_ads.master_table_date_fix.sql
+-- Purpose: Standardize and correct date field in raw Google Ads dataset
+-- Input: google_ads.master_table
+-- Output: google_ads.master_table_date_fix
+-- Notes: Ensures consistent date formatting for downstream transformations
+
 create or replace view google_ads.master_table_date_fix as (
 WITH cleaned AS (
     SELECT *

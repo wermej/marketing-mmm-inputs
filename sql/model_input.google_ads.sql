@@ -1,5 +1,5 @@
--- File: google_ads.sql
--- Purpose: Clean and standardize Google Ads dataset with imputed metrics
+-- File: model_input.google_ads.sql
+-- Purpose: Clean and standardize Google Ads dataset
 -- Input: google_ads.master_table_date_fix
 -- Output: model_input.google_ads
 -- Notes: Missing values imputed using daily averages; unreliable fields excluded

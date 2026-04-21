@@ -1,6 +1,6 @@
--- File: daily_dist_nov2024.sql
+-- File: model_input.daily_dist_nov2024.sql
 -- Purpose: Create unified daily dataset across Google, Meta, and TikTok
--- Input: cleaned Google Ads data and platform datasets
+-- Input: model_input.google_ads, model_input.facebook_ads, model_input.tiktok_ads
 -- Output: model_input.daily_dist_nov2024
 -- Notes: Google data lacks geo; allocated using Meta/TikTok daily country spend share (proxy method)
 

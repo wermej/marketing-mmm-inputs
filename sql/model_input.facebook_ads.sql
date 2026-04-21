@@ -1,3 +1,9 @@
+-- File: model_input.facebook_ads.sql
+-- Purpose: Create standardized Meta (Facebook) dataset
+-- Input: data/global_ads_performance_dataset.csv
+-- Output: model_input.facebook_ads
+-- Notes: Aggregated by date and country; aligned to unified schema
+
 create or replace view model_input.facebook_ads as (
 select date, country, campaign_type
 		, sum(coalesce(clicks,0)) as clicks

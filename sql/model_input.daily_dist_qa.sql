@@ -1,3 +1,8 @@
+-- File: model_input.daily_dist_qa.sql
+-- Purpose: Validate integrity of final dataset
+-- Input: model_input.daily_dist_nov2024
+-- Notes: Confirms totals reconcile and allocation logic preserves overall metrics
+
 -- GOOGLE
 with clicks as (
 	select date, avg(clicks) as avg_clicks
